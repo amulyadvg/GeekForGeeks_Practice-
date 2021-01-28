@@ -1,0 +1,48 @@
+#include <iostream>
+#include<math.h>
+
+using namespace std;
+
+int main() {
+  int a[20][20], b[20][20], c[20][20];
+  int m, n, p, q;
+  
+  cout << "Enter rows and columns of first matrix: " << endl;
+  cin >> m >> n;
+  
+  cout << "Enter first matrix elements: " << endl;
+  for (int i=0; i < m; i++) {
+    for (int j=0; j < n; j++) {
+      cin >> a[i][j];
+    }
+  }
+  
+  cout << "Enter rows and columns of second matrix: " << endl;
+  cin >> p >> q;
+  
+  cout << "Enter second matrix elements: " << endl;
+  for (int i=0; i < p; i++) {
+    for (int j=0; j < q; j++) {
+      cin >> b[i][j];
+    }
+  }
+  
+  if (n == p) {
+  cout << "Matrix C: " << endl;
+  for (int i=0; i < m; i++) {
+    for (int j=0; j < q; j++) {
+      c[i][j] = 0;
+      
+      for (int k=0; k < n; k++) {
+        c[i][j] += a[i][k]*b[k][j];
+      }
+      cout << c[i][j] << " ";
+    }
+    cout << endl;
+  }
+  }
+  else 
+    cout << "Invalid matrix" << endl;
+
+return 0;
+}
